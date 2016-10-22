@@ -14,41 +14,46 @@
         <link rel="stylesheet" type="text/css" href="Styles.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
+    <style type="text/css">    
+        body{    
+            background-image: url(image/bg.jpg);    
+            background-repeat: no-repeat;    
+            background-size: cover;
+        }    
+    </style>
     <body>
+
         <header>
-            <h1>InstaGrim ! </h1>
-            <h2>Your world in Black and White</h2>
+            <h1 class="centermy">InstaGrim ! </h1>
         </header>
-        <nav>
-            <ul>
-
-               
-                <li><a href="upload.jsp">Upload</a></li>
-                    <%
-                        
-                        LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn");
-                        if (lg != null) {
-                            String UserName = lg.getUsername();
-                            if (lg.getlogedin()) {
-                    %>
-
-                <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li>
-                    <%}
-                            }else{
-                                %>
-                 <li><a href="register.jsp">Register</a></li>
-                <li><a href="login.jsp">Login</a></li>
-                <%
-                                        
-                            
-                    }%>
-            </ul>
-        </nav>
-        <footer>
-            <ul>
-                <li class="footer"><a href="/Instagrim">Home</a></li>
-                <li>&COPY; Andy C</li>
-            </ul>
-        </footer>
+        <nav><jsp:include page="nav.jsp"></jsp:include></nav>
+            <%
+                LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn");
+                if (lg != null) {
+                    if (lg.getlogedin()) {
+                        String username=lg.getUsername();
+            %>
+        <div class="relative">
+            <%
+                boolean flag=lg.gethaveUserPic();
+                if (flag) {
+            %>
+            <img class="img" src="/Instagrim/userpic/<%=lg.getUsername()%>" alt="Fjords" width="150" height="150">
+            <% }else{%>
+            <img class="img" src="image/user.png" alt="Fjords" width="150" height="150">
+            <%}%>
+            <div class="absolute">
+            <a class="afont">Firstname:<%=lg.getFirstname()%></a><br>
+            <a class="afont">Lastname :<%=lg.getLastname()%></a><br>
+            <a class="afont">Email    :<%=lg.getEmail()%></a>
+            </div>
+        </div>
+        
+        <a class="centermy" style="font-size: 50px">Welcome,<%=lg.getFirstname()%> <%=lg.getLastname()%></a>
+        <%}
+            }%>
     </body>
+
+
+
 </html>

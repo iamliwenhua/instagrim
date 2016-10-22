@@ -12,30 +12,42 @@
         <title>Instagrim</title>
         <link rel="stylesheet" type="text/css" href="Styles.css" />
     </head>
+    <style type="text/css">    
+        body{    
+            background-image: url(image/bg.jpg);    
+            background-repeat: no-repeat;    
+            background-size: cover;
+        }    
+    </style>
     <body>
-        <h1>InstaGrim ! </h1>
-        <h2>Your world in Black and White</h2>
-        <nav>
-            <ul>
-                <li class="nav"><a href="upload.jsp">Upload</a></li>
-                <li class="nav"><a href="/Instagrim/Images/majed">Sample Images</a></li>
+        <h1 class="centermy">InstaGrim ! </h1>
+        <nav><jsp:include page="nav.jsp"></jsp:include></nav>
+
+            <article>
+                <h3 class="centermy" style="font-size:18px">File Upload</h3>
+                <ul>
+                <%session.setAttribute("numofpic", "0");%>
+                <form method="POST" enctype="multipart/form-data" action="Image">
+
+                    <a class="uploadfile2">Choose file to upload: <input type="file" name="upfile">
+                        <a class="uploadfile"><input type="submit" value="Upload File"></a>
+                    </a>
+
+                    <div class="sel">
+                        <div style="font-size:20px">Filter</div>
+                        <select select name="selectcondition" id="selectcondition">
+                            <option value="1">Grey the pic</option>
+                            <option value="2">DissolveFilter</option>
+                            <option value="3">SolarizeFilter</option>
+                            <option value="4">KaleidoscopeFilter</option>
+                            <option value="5">DisplaceFilter</option>
+                            <option value="10">Normal</option>
+                        </select>
+                    </div>
+                    </a>
+                </form>
             </ul>
-        </nav>
- 
-        <article>
-            <h3>File Upload</h3>
-            <form method="POST" enctype="multipart/form-data" action="Image">
-                File to upload: <input type="file" name="upfile"><br/>
-
-                <br/>
-                <input type="submit" value="Press"> to upload the file!
-            </form>
-
         </article>
-        <footer>
-            <ul>
-                <li class="footer"><a href="/Instagrim">Home</a></li>
-            </ul>
-        </footer>
+
     </body>
 </html>

@@ -1,0 +1,256 @@
+
+ul.all {
+    position:relative;
+    left:10px;
+    height:auto;
+    width:97%;
+    margin: 5px;
+    border:5px;
+    border-style: double;
+    border-radius:18px;
+    border-color:#6666ff;
+    float: left;
+}
+a.follow{
+    border: 3px solid;
+    position: relative;
+    left:70px;
+    font-size: 18px;
+    color:white;
+    text-align: center;
+    border-radius:18px;
+}
+
+ul.userpics {
+    position:relative;
+    left:300px;
+    height:auto;
+    width:76%;
+    margin: 5px;
+    border:5px;
+    border-style: double;
+    border-radius:18px;
+    border-color:#6666ff;
+    float: left;
+}
+ul.userinfo {
+    position:absolute;
+    left:10px;
+    height:80%;
+    width:280px;
+    margin: 5px;
+    border:5px;
+    border-style: double;
+    border-radius:18px;
+    border-color:#6666ff;
+    float: left;
+}
+div.comment{
+    font-size:12px;
+}
+div.textinfo
+{
+    position:absolute;
+    left:10px;
+    font-size:16px;
+    bottom:10px;
+    font-style: italic;
+    color:#3333ff;
+}
+div.img {
+    position: absolute;
+    top:10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    height:auto;
+    width:300px;
+}
+div.bottom{
+    position:absolute;
+    left:410px;
+    bottom: 0;
+    width:50%;
+}
+
+div.likesandunlikes{
+    position:absolute;
+    right:10px;
+    bottom:10px;
+}
+
+div.picinfo{
+    position:absolute;
+    right:10px;
+    top:10px;
+}
+
+div.up{
+    position:absolute;
+    left:410px;
+    top: 10px;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+    color: #777;
+}
+
+.centermy {
+    margin-top: 40px;
+    font-size: 38px;
+    text-align: center;
+    color:#0033ff;
+}
+
+.footer
+{
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    height: 20px;
+    width: 100%;
+}
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-weight: 300;
+}
+
+div.relative {
+    position: relative;
+    top:20px;
+    left:50px;
+    width:500px;
+    height: 156px;
+} 
+
+div.absolute
+{
+    position: absolute;
+    top:20px;
+    left:160px;
+}
+.afont{
+    font-style: italic;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 20px 20px;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    border:5px;
+    border-style:double;
+    border-radius:18px;
+    border-color:#6666ff;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display:block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration:buttonshadow;
+    font-size: 15px;
+}
+
+.activef {
+    background-color: #4CAF50;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #3366ff;
+}   
+
+
+*{
+    font: 13px/1.5 'Source Sans Pro', Verdana, Helvetica, Arial, sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -box-sizing: border-box;
+    padding:0;
+    margin:0;
+    list-style:none;
+    box-sizing: border-box;
+}
+
+form{
+    position: relative;
+    bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width:90%;
+}
+
+a{
+    color:#27A9E3;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+#darkbannerwrap {
+    width: 18px;
+    height: 10px;
+    margin: 0 0 20px -58px;
+    position: relative;
+}
+
+input[type=text],
+input[type=file],
+input[type=password],
+input[type=email], select {
+    border: 1px solid #DCDEE0;
+    vertical-align: middle;
+    border-radius: 3px;
+    height: 20px;
+    padding: 0px 8px;
+    font-size: 12px;
+    color: #555555;
+    outline:none;
+    width:100%;
+}
+input[type=text]:focus,
+input[type=file]:focus,
+input[type=password]:focus,
+input[type=email]:focus, select:focus {
+    border: 1px solid #27A9E3;
+}
+
+.hello{
+    position: relative;
+    right:0;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px 5px;
+    margin: 0px;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #27A9E3;
+    border-radius: 3px;
+    border: none;
+    -webkit-appearance: none;
+    outline:none;
+    width:30px;
+}

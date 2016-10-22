@@ -12,34 +12,37 @@
         <title>Instagrim</title>
         <link rel="stylesheet" type="text/css" href="Styles.css" />
     </head>
+    <style type="text/css">    
+        body{    
+            background-image: url(image/bg.jpg);    
+            background-repeat: no-repeat;    
+            background-size: cover;
+        }    
+    </style>
     <body>
         <header>
-        <h1>InstaGrim ! </h1>
-        <h2>Your world in Black and White</h2>
+            <h1 class="centermy">InstaGrim ! </h1>
         </header>
-        <nav>
-            <ul>
-                
-                <li><a href="/Instagrim/Images/majed">Sample Images</a></li>
-            </ul>
-        </nav>
-       
-        <article>
-            <h3>Register as user</h3>
-            <form method="POST"  action="Register">
-                <ul>
-                    <li>User Name <input type="text" name="username"></li>
-                    <li>Password <input type="password" name="password"></li>
-                </ul>
-                <br/>
-                <input type="submit" value="Regidter"> 
-            </form>
+        <nav><jsp:include page="nav.jsp"></jsp:include></nav>
 
-        </article>
-        <footer>
-            <ul>
-                <li class="footer"><a href="/Instagrim">Home</a></li>
-            </ul>
-        </footer>
+        <div class="login">
+            <div class="message">Register as user</div>
+            <div id="darkbannerwrap"></div>
+            <form method="POST"  action="Register">
+                <input name="username" placeholder="Username" required="" type="text">
+                <hr class="hr15">
+                <input name="firstname" placeholder="Firstname" required="" type="text">
+                <hr class="hr15">
+                <input name="lastname" placeholder="Lastname" required="" type="text">
+                <hr class="hr15">
+                <input name="email" placeholder="Email" required="" type="email">
+                <hr class="hr15">
+                <input name="password" placeholder="Password" required="" type="password">
+                <hr class="hr15">
+                
+                <input value="Register" style="width:100%;" type="submit">
+                <hr class="hr20">
+            </form>
+        </div>
     </body>
 </html>
