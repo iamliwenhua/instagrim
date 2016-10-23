@@ -57,7 +57,7 @@ public class SetUser extends HttpServlet {
         String lastname=request.getParameter("lastname");
         String username = (String)session1.getAttribute("username");
         
-        LoggedIn lg=new LoggedIn();
+        LoggedIn lg=(LoggedIn) session1.getAttribute("LoggedIn");
         lg.setLogedin();
         lg.setUsername(username);
         lg.setFirstname(firstname);
