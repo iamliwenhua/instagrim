@@ -73,8 +73,8 @@
             </div>
             
             <div class="likesandunlikes">
-                <a href="/Instagrim/likes/<%=p.getSUUID()%>" ><div>Likes:<%=likes%></div></a>
-                <a href="/Instagrim/unlikes/<%=p.getSUUID()%>" ><div>Unlikes:<%=unlikes%></div></a>
+                <a style="color:blue" href="/Instagrim/likes/<%=p.getSUUID()%>" ><div>Likes:<%=likes%></div></a>
+                <a style="color:blue" href="/Instagrim/unlikes/<%=p.getSUUID()%>" ><div>Unlikes:<%=unlikes%></div></a>
             </div>
         </div>
         <div class="up">
