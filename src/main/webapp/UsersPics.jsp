@@ -72,8 +72,8 @@
 
             <div class="bottom">
                 <form method="POST" action="Image">
-                    <input name="comment<%=a%>" placeholder="Make Your Comment" required="" type="text">
-                    <input class="hello" value="Submit" style="width:100%;" type="submit">
+                    <textarea name="comment<%=a%>" placeholder="Make Your Comment" required="" type="text"></textarea>
+                    <input class="hello" value="Submit" type="submit">
                 </form>
             </div>
         </ul>

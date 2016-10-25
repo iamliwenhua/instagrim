@@ -92,10 +92,8 @@
         %>
         <div class="bottom">
             <form method="POST" action="Image">
-                <input name="comment<%=a%>" placeholder="Make Your Comment" required="" type="text">
-                <hr class="hr15">
-                <input class="hello" value="Submit" style="width:100%;" type="submit">
-                <hr class="hr20">
+                <textarea name="comment<%=a%>" placeholder="Make Your Comment" required="" type="text"></textarea>
+                <input class="hello" value="Submit" type="submit">
             </form>
         </div>
         <%}
