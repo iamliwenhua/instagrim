@@ -116,7 +116,7 @@ public class Friend extends HttpServlet {
                 boundStatement.bind(lg.getUsername()));
         session.close();
         lg.addFriend(user);
-        sessionhttp.setAttribute("LoggedIn",lg);
+        sessionhttp.setAttribute("LoggedIn", lg);
         RequestDispatcher rd = request.getRequestDispatcher("/profile/" + user);
         rd.forward(request, response);
     }
@@ -135,7 +135,7 @@ public class Friend extends HttpServlet {
                 boundStatement.bind(lg.getUsername()));
         session.close();
         lg.deleteFriend(user);
-        sessionhttp.setAttribute("LoggedIn",lg);
+        sessionhttp.setAttribute("LoggedIn", lg);
         RequestDispatcher rd = request.getRequestDispatcher("/profile/" + user);
         rd.forward(request, response);
 
@@ -162,31 +162,55 @@ public class Friend extends HttpServlet {
         }
         System.out.println(tmp);
         tmp = tmp.substring(5, tmp.length() - 2);
-        if (tmp.equals("UL")){
+        if (tmp.equals("UL")) {
             RequestDispatcher rd = request.getRequestDispatcher("/Allpics.jsp");
             request.setAttribute("Pics", lsPics);
             rd.forward(request, response);
         }
         String[] parts = tmp.split(",");
-        
+
         for (String s : parts) {
             System.out.println(s);
-            s=s.replace(" ", "");
+            s = s.replace(" ", "");
             lsPics.addAll(tm.getPicsForUser(s));
         }
         RequestDispatcher rd = request.getRequestDispatcher("/Allpics.jsp");
-            request.setAttribute("Pics", lsPics);
-            rd.forward(request, response);
+        request.setAttribute("Pics", lsPics);
+        rd.forward(request, response);
     }
 
     private void Manage(String user, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession sessionhttp = request.getSession();
+        Session session = cluster.connect("instagrim");
+        String code = "select friends from userprofiles where login=?";
+        System.out.println(code);
+        PreparedStatement ps = session.prepare(code);
+        BoundStatement boundStatement = new BoundStatement(ps);
+        ResultSet rs = session.execute( // this is where the query is executed
+                boundStatement.bind(user));
+        String tmp = null;
+        for (Row row : rs) {
+            tmp = row.toString();
+        }
+        System.out.println(tmp);
+        tmp = tmp.substring(5, tmp.length() - 2);//friends list
+        //get info for each friend
+        if (tmp.equals("UL")) {
+            RequestDispatcher rd = request.getRequestDispatcher("/managefriend.jsp");
+            request.setAttribute("friends", "empty");
+            rd.forward(request, response);
+        } else {
+            tmp = tmp.replace(" ", "");
+            RequestDispatcher rd = request.getRequestDispatcher("/managefriend.jsp");
+            request.setAttribute("friends", tmp);
+            rd.forward(request, response);
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("inside friend");
-        HttpSession sessionhttp = request.getSession();
-
+        HttpSession session = request.getSession();
+        String friend=request.getParameter("Friend");
     }
 
     private void error(String mess, HttpServletResponse response) throws ServletException, IOException {

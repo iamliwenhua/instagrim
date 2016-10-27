@@ -113,32 +113,34 @@ public class Image extends HttpServlet {
     }
 
     public void SetLikes(String Image, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String t=request.getRequestURI();
+        String t = request.getRequestURI();
         System.out.println(t);
         PicModel tm = new PicModel();
         tm.setCluster(cluster);
         tm.setLikes(java.util.UUID.fromString(Image));
-         response.sendRedirect("/Instagrim/Images/allpics");
+        response.sendRedirect("/Instagrim/Images/allpics");
 
-        
     }
+
     private void SetUnlikes(String Image, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PicModel tm = new PicModel();
         tm.setCluster(cluster);
         tm.setUnlikes(java.util.UUID.fromString(Image));
         response.sendRedirect("/Instagrim/Images/allpics");
     }
+
     private void DisplayImageList(String User, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PicModel tm = new PicModel();
         tm.setCluster(cluster);
+        java.util.LinkedList<Pic> lsPics = new java.util.LinkedList<>();
         if (User.equals("allpics")) {
             System.out.println("In dispaly all pics");
-            java.util.LinkedList<Pic> lsPics = tm.getAllpics();
+            lsPics = tm.getAllpics();
             RequestDispatcher rd = request.getRequestDispatcher("/Allpics.jsp");
             request.setAttribute("Pics", lsPics);
             rd.forward(request, response);
         } else {
-            java.util.LinkedList<Pic> lsPics = tm.getPicsForUser(User);
+            lsPics = tm.getPicsForUser(User);
             RequestDispatcher rd = request.getRequestDispatcher("/UsersPics.jsp");
             request.setAttribute("Pics", lsPics);
             rd.forward(request, response);
