@@ -32,20 +32,20 @@
 
         <div class="info">
             <%
-                boolean flag=lg.gethaveUserPic();
+                boolean flag = lg.gethaveUserPic();
                 if (flag) {
             %>
             <a href="/Instagrim/Image/userprofilepic" ><img src="/Instagrim/userpic/<%=lg.getUsername()%>" alt="Fjords" width="150" height="150"></a>
-            <% }else{%>
+                <% } else {%>
             <a href="/Instagrim/Image/userprofilepic" ><img src="image/user.png" alt="Fjords" width="150" height="150"></a>
-            <%}%>
+                <%}%>
             <div class="infoab">
                 <a>Firstname:<%=lg.getFirstname()%></a><br>
-            <a>Lastname:<%=lg.getLastname()%></a><br>
-            <a>Email:<%=lg.getEmail()%></a><br>
-            <a style="color:white;font-style:normal">click the picture to change</a>
+                <a>Lastname:<%=lg.getLastname()%></a><br>
+                <a>Email:<%=lg.getEmail()%></a><br>
+                <a style="color:white;font-style:normal">click the picture to change</a>
             </div>
-            <div class="changeinfo">
+            <div class="changeinfo1">
                 <div class="message">Change your setting</div>
                 <div id="darkbannerwrap"></div>
                 <form method="POST"  action="SetUser">
